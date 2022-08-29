@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'basic_widgets/text_widget.dart';
 import 'basic_widgets/image_widget.dart';
 import 'basic_widgets/loading_cupertino.dart';
+import 'basic_widgets/fab_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Contoh Date Picker',
+      title: 'Daffa App',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -75,25 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text("${selectedDate.toLocal()}".split(' ')[0]),
-            const SizedBox(
-              height: 20.0,
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                _selectDate(context),
-                // ignore: avoid_print
-                print(selectedDate.day + selectedDate.month + selectedDate.year)
-              },
-              child: const Text('Pilih Tanggal'),
-            ),
-          ],
-        ),
-      ),
+      body: const MyCupertinoWidget(),
     );
   }
 }
